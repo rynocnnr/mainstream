@@ -1,0 +1,107 @@
+footer {
+  @include linear-gradient(180deg, #242424 40%, $neutral1000 100%);
+  padding: 20px 0px;
+  color: $white;
+  p {
+    color: $white;
+  }
+  h2 {
+    @include font-size(24px);
+    text-transform: uppercase;
+    margin: 0;
+    color: $white;
+  }
+  .location {
+    @include grid-column(6);
+    address {
+      @include font-size(14px);
+      font-family: $SourceSans;
+      font-style: normal;
+      margin-top: 20px;
+    }
+    a {
+      @include font-size(18px);
+      font-family: $SourceSans;
+      color: $white;
+      font-weight: 600;
+      text-decoration: none;
+    }
+  }
+  .contact {
+    @include grid-column(3);
+    @include grid-push(1);
+    @include grid-shift(1);
+    @include mobile {
+      @include grid-column(12);
+      @include grid-push(0);
+      @include grid-shift(0);
+      margin-top: 25px;
+    }
+    a {
+      @include btntxt($mtiblue);
+      margin-bottom: 15px;
+    }
+  }
+  .trusted {
+    @include grid-column(12);
+    padding: 25px 0px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border-top: solid 1px $neutral1000;
+    border-bottom: solid 1px $neutral1000;
+    .trusted-logo {
+      @include grid-column(3);
+      text-align: center;
+      @include mobile {
+        @include grid-column(6);
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .base {
+    font-family: $SourceSans;
+    .copyright {
+      @include grid-column(8);
+      @include font-size(14px);
+      p {
+        color: $neutral700;
+      }
+      @include mobile {
+        @include grid-column(12);
+        margin-top: 35px;
+        text-align: center;
+      }
+      a {
+        color: lighten($mtiblue, 20%);
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+    .social {
+      @include grid-column(4);
+      text-align: right;
+      margin-top: 10px;
+      a {
+        color: $white;
+        display: inline-block;
+        border: solid 1px $white;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        padding: 5px;
+        border-radius: 100px;
+        margin-left: 10px;
+        &:hover {
+          color: rgba($white, .5);
+        }
+      }
+      @include mobile {
+        @include grid-column(12);
+        @include grid-push(-12);
+        text-align: center;
+      }
+    }
+  }
+}

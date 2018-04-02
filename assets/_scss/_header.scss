@@ -1,0 +1,36 @@
+header {
+  background-color: $white;
+  @include box-shadow(0, 0, 8, 0, rgba($black, 0.3));
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+  h1.logo {
+    @include grid-column(4);
+    padding-top: 15px;
+    line-height: 0px;
+    margin: 0px;
+    @include tabletdown {
+      @include grid-column(2);
+      background: url('../images/mti-bubble.png') no-repeat top left;
+      background-size: contain;
+      width: 50px;
+      height: 50px;
+      padding: 0px;
+      margin: 10px 20px !important;
+      img {
+        display: none;
+      }
+    }
+    @include navbreakbig {
+      margin: -4px 0px 0px 20px;
+    }
+    @include mobile {
+      background: none;
+      margin: 0px 0px 0px 20px;
+      padding-bottom: 10px;
+      img {
+        margin: 0px;
+      }
+    }
+  }
+}

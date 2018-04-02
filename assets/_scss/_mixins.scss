@@ -1,0 +1,159 @@
+// Test
+@mixin test($color) {
+  border: solid 1px $color;
+}
+
+// Convert font-size to rem
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+// shadows
+@mixin box-shadow($x, $y, $b, $s, $color) {
+  box-shadow: #{$x}px #{$y}px #{$b}px #{$s}px $color;
+}
+@mixin text-shadow($x, $y, $b, $color) {
+  text-shadow: #{$x}px #{$y}px #{$b}px $color;
+}
+@mixin global-text-shadow {
+  @include text-shadow(0, 2, 4, rgba($black, 0.3));
+}
+@mixin global-box-shadow() {
+  @include box-shadow(0, 2, 4, 0, rgba($black, 0.3));
+}
+
+// buttons
+@mixin btnsld($color) {
+  background-color: $color;
+  color: $white;
+  display: block;
+  font-family: $SourceSans;
+  @include font-size(20px);
+  font-weight: 300;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px 0px;
+  @include global-box-shadow;
+  &:hover {
+    background-color: darken($color, 10%);
+  }
+}
+@mixin btntxt($color) {
+  background-color: $white;
+  color: $color;
+  display: block;
+  font-family: $SourceSans;
+  @include font-size(20px);
+  font-weight: 300;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px 0px;
+  @include global-box-shadow;
+  &:hover {
+    background-color: $neutral100;
+  }
+  @include mobile {
+    @include font-size(16px);
+  }
+}
+@mixin btnlrg($color) {
+  background-color: $white;
+  color: $color;
+  display: block;
+  font-family: $SourceSans;
+  @include font-size(40px);
+  font-weight: 400;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  padding: 20px 0px;
+  cursor: pointer;
+  @include global-box-shadow;
+  &:hover {
+    background-color: $neutral100;
+  }
+  @include mobile {
+      @include font-size(24px);
+      padding: 20px;
+  }
+}
+@mixin c2abtn($color) {
+  @include btnlrg($color);
+  width: 50%;
+  margin: 30px auto 0px;
+}
+
+// Placeholder
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}
+}
+
+// Linear Gradients
+@mixin linear-gradient($direction, $color-stops...) {
+  // Direction has been omitted and happens to be a color-stop
+  @if is-direction($direction) == false {
+    $color-stops: $direction, $color-stops;
+    $direction: 180deg;
+  }
+
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops);
+}
+
+// Panels
+@mixin gradient($color) {
+  @include linear-gradient(90deg, $color, darken($color, 20%));
+}
+
+// Media Queries
+@mixin mobile {
+  @media (max-width: #{$mobile - 1px}) {
+    @content;
+  }
+}
+@mixin mobileup {
+  @media (min-width: $mobile) {
+    @content;
+  }
+}
+@mixin tabletdown {
+  @media (max-width: #{$tablet - 1px}) and (min-width: $mobile) {
+    @content;
+  }
+}
+@mixin navbreaksmall {
+  @media (max-width: #{$navbreaksmall + 1px}) {
+    @content;
+  }
+}
+@mixin navbreakbig {
+  @media (max-width: #{$navbreakbig + 1px}) and (min-width: #{$navbreaksmall - 1px}) {
+    @content;
+  }
+}
+@mixin navbreak {
+  @media (max-width: #{$navbreakbig + 1px}) {
+    @content;
+  }
+}
+@mixin tabletup {
+  @media (min-width: #{$tablet}) and (max-width: #{$desktop - 1px}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}

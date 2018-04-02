@@ -1,0 +1,130 @@
+section.hero {
+  h2 {
+    @include font-size(64px);
+    text-transform: uppercase;
+    color: $white;
+    font-weight: 300;
+    @include mobile {
+      @include font-size(36px);
+    }
+    strong {
+      font-weight: 900;
+    }
+  }
+  h3 {
+    @include font-size(36px);
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $white;
+    line-height: 40px;
+    @include mobile {
+      @include font-size(24px);
+    }
+  }
+  &.double {
+    h2 {
+      @include font-size(72px);
+      font-weight: 100;
+      text-transform: uppercase;
+      color: $white;
+      text-align: center;
+      span {
+        display: block;
+        font-weight: 400;
+        margin-top: -30px;
+      }
+      margin-bottom: 50px;
+      @include mobile {
+        @include font-size(24px);
+        span {
+          margin-top: 0px;
+        }
+      }
+    }
+  }
+}
+h1 {
+  @include font-size(64px);
+  line-height: 80px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+h2 {
+  @include font-size(24px);
+  margin: 0px;
+  color: $neutral900;
+  font-weight: 400;
+  @include global-text-shadow;
+  &.big {
+    @include font-size(72px);
+    line-height: 107px;
+    text-transform: uppercase;
+    text-align: center;
+    @include mobile {
+      @include font-size(48px);
+    }
+  }
+  &.medium {
+    @include font-size(48px);
+    line-height: 71px;
+    text-align: center;
+    @include mobile {
+      @include font-size(24px);
+      line-height: 36px;
+    }
+  }
+}
+h3 {
+  @include font-size(24px);
+  line-height: 32px;
+  color: $neutral900;
+  margin: 0px;
+  @include global-text-shadow;
+}
+p {
+  @include font-size(16px);
+  line-height: 24px;
+  color: $neutral900;
+  &.date {
+    margin: 0px;
+    color: $neutral700;
+  }
+  &.callout {
+    @include font-size(32px);
+    line-height: 47px;
+    text-align: center;
+    width: 80%;
+    margin: 50px auto;
+    @include mobile {
+      @include font-size(24px);
+      line-height: 36px;
+      margin: 20px auto;
+    }
+  }
+}
+.statement {
+  @include grid-column(12);
+  margin-bottom: 50px;
+  h2 {
+    @include font-size(40px);
+    font-weight: 200;
+    line-height: 60px;
+    color: $neutral900;
+    @include grid-column(10);
+    @include grid-shift(1);
+    text-align: center;
+    @include mobile {
+      @include font-size(24px);
+      line-height: 36px !important;
+    }
+  }
+}
+.custom-software {
+  color: $mtiteal;
+}
+.managed-services {
+  color: $mtipurple;
+}
+.hosting-solutions {
+  color: $mtiblue;
+}

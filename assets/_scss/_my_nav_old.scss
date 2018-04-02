@@ -1,0 +1,99 @@
+.navtoggle {
+  display: none;
+  float: right;
+  margin-right: 20px;
+  margin-top: 20px;
+  transform: rotate(90deg);
+  @include font-size(16px);
+  letter-spacing: 3px;
+  text-decoration: none;
+  color: $mtiblue;
+  text-shadow: -1px 0 $mtiblue, 0 1px $mtiblue, 1px 0 $mtiblue, 0 -1px $mtiblue;
+  @include mobile {
+    display: block;
+  }
+}
+nav {
+  @include grid-column(8);
+  text-align: right;
+  display: block;
+  @include tabletdown {
+    @include grid-column(10);
+    float: right;
+    margin-right: 20px;
+  }
+  @include mobile {
+    display: none;
+    @include linear-gradient(180deg, darken($mtiblue, 20%) 20%, $mtiblue);
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    padding: 20px 0px;
+  }
+  ul {
+    display: inline;
+    list-style-type: none;
+    text-indent: 0px;
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline-block;
+      @include mobile {
+        display: block;
+      }
+      a {
+        display: block;
+        color: $neutral900;
+        text-transform: uppercase;
+        @include font-size(20px);
+        font-weight: 300;
+        text-decoration: none;
+        padding: 20px 10px;
+        &:hover {
+          background-color: $neutral0;
+        }
+        &:active {
+          background-color: $mtiblue;
+          color: $white;
+        }
+        @include tabletdown {
+          padding: 20px 10px;
+          right: 0;
+        }
+        @include navbreak {
+          @include font-size(14px);
+          padding: 20px 5px;
+        }
+        @include mobile {
+          @include font-size(20px);
+          color: $white;
+          padding: 15px 20px;
+          &:hover {
+            background-color: rgba($black, 0.3);
+          }
+        }
+      }
+    }
+    .subnav {
+      display: none;
+      &.show {
+        display: block;
+        position: absolute;
+        right: 0;
+        left: calc(100% - 50%);
+        z-index: 1000;
+        background-color: $mtiblue;
+        text-align: left;
+        overflow: auto;
+        li {
+          display: block;
+          a {
+            color: $white;
+            @include font-size(18px);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+.navigation {
+// Mobile view
+  .navigation-menu-button {
+    display: block;
+    float: right;
+    margin: 0;
+    padding-top: 0.5em;
+    @include tablet {
+      display: none;
+    }
+  }
+// Nav menu
+  .navigation-wrapper {
+    @include clearfix;
+    position: relative;
+  }
+  .logo {
+    float: left;
+    @include tablet {
+      float: none;
+      text-align: center;
+      display: block;
+    }
+
+    @include desktop {
+      float: left;
+    }
+
+    img {
+      max-height: 2em;
+      padding-right: 1em;
+    }
+  }
+
+  nav {
+    float: none;
+
+    @include tablet {
+      float: left;
+      text-align: center;
+      line-height: 1.5em;
+      padding-top: 0.3em;
+    }
+  }
+
+  ul.navigation-menu {
+    clear: both;
+    display: none;
+    margin: 0 auto;
+    overflow: visible;
+    padding: 0;
+    width: 100%;
+
+    @include tablet {
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+
+    &.show {
+      display: block;
+    }
+  }
+
+
+// Nav items
+  ul li.nav-link {
+    display: block;
+    text-align: right;
+    width: 100%;
+
+    @include tablet {
+      background: transparent;
+      display: inline;
+      text-decoration: none;
+      width: auto;
+    }
+  }
+
+  li.nav-link a {
+    display: inline-block;
+
+    @include desktop {
+      padding-right: 1em;
+    }
+  }
+}

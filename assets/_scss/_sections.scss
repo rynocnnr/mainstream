@@ -1,0 +1,940 @@
+// Hero Headers
+section.hero {
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  padding: 150px 0;
+  &.small {
+    padding: 25px 0 !important;
+  }
+  &.sub-hero {
+    padding: 50px 0 !important;
+  }
+  @include mobile {
+    padding: 50px 20px;
+  }
+}
+// End Hero Headers
+
+// Spotlights
+section.spotlights {
+  img {
+    width: 30%;
+    &.big {
+      width: 50%;
+    }
+    @include mobile {
+      width: 20%;
+      &.big {
+        width: 30%;
+      }
+    }
+  }
+  h3 {
+    margin-top: 30px;
+    font-family: $SourceSans;
+    font-weight: 400;
+    &.home {
+      margin-top: 0px;
+      font-family: $Oswald;
+    }
+  }
+  a {
+    width: 80%;
+    margin: 30px auto;
+  }
+  @include mobile {
+    @include grid-column(12);
+    margin-left: 0;
+    float: none;
+  }
+}
+// End Spotlights
+
+// Why MTI
+section.whymti {
+  @include gradient($mtiblue);
+  .container {
+    .why {
+      @include grid-column(4);
+      @include grid-push(1);
+      @include mobile {
+        @include grid-column(12);
+        text-align: center;
+        padding: 30px 0;
+      }
+      h2 {
+        margin-bottom: 30px;
+      }
+      a {
+        @include grid-column(10);
+        @include grid-shift(1);
+        @include grid-push(-1);
+        margin-bottom: 10px;
+        @include mobile {
+          @include grid-column(12);
+          @include grid-shift(0);
+          @include grid-push(0);
+        }
+      }
+    }
+    .quotes {
+      @include grid-column(6);
+      @include mobile {
+        @include grid-column(12);
+      }
+      .quote-block {
+        @include global-box-shadow;
+        background-color: $white;
+        border-radius: 20px;
+        padding: 20px 30px;
+        margin-top: 35px;
+        .quote {
+          @include font-size(24px);
+          line-height: 36px;
+          text-align: center;
+          font-weight: 100;
+        }
+        .quoter {
+          font-family: $SourceSans;
+          @include font-size(14px);
+          line-height: 18px;
+          text-align: center;
+          font-weight: 400;
+          .company {
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+  h2 {
+    @include font-size(36px);
+    text-transform: uppercase;
+    color: $white;
+  }
+  h3 {
+    @include font-size(20px);
+    color: $white;
+    font-weight: 200;
+    @include global-text-shadow;
+    margin: 13px 0px 0px;
+    padding: 0px;
+  }
+}
+// End Why MTI
+
+// News
+section.news {
+  .title {
+    @include grid-column(12);
+    margin-bottom: 30px;
+  }
+  h2 {
+    @include grid-column(12);
+    text-align: center;
+    @include font-size(36px);
+    text-transform: uppercase;
+    font-weight: 400;
+    // margin: 0px !important;
+    color: $white;
+    @include global-text-shadow;
+  }
+  &.home {
+    h2 {
+      @include grid-column(6);
+      color: $neutral900;
+      text-align: left;
+      @include mobile {
+        @include grid-column(12);
+        text-align: center;
+      }
+    }
+    .buttons {
+      @include grid-collapse;
+      @include grid-column(6);
+      float: right;
+      @include mobile {
+        @include grid-column(12);
+        float: none;
+      }
+      a {
+        @include btntxt($mtiblue);
+        @include grid-column(6);
+        margin-top: 5px;
+        @include mobile {
+          @include grid-column(12);
+        }
+      }
+    }
+  }
+  .subscribe {
+    margin-top: 50px;
+    a {
+      width: 70%;
+    }
+    @include mobile {
+      margin-top: 30px;
+      a {
+        float: none;
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+// End news
+
+// Videos
+section.videos {
+  background-color: $white;
+  .video {
+    @include grid-column(6);
+  }
+}
+// End Videos
+
+// About Us
+section.about {
+  background-image: url('../images/mti-family.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-color: $mtiblue;
+  h2, p {
+    color: $white;
+  }
+  .stats {
+    h2 {
+      text-transform: uppercase;
+      font-weight: 200;
+    }
+    p.callout {
+      margin: 0 auto;
+      font-family: $SourceSans;
+      text-transform: uppercase;
+    }
+    &.col3 {
+      overflow: hidden;
+      border-bottom: solid 1px $white;
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+    }
+    .stat {
+      border-right: solid 1px $white;
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+  @include mobile {
+    .stats {
+      &.col3 {
+        border: none;
+        margin-bottom: 0px;
+        padding: 0px;
+        margin-top: 50px;
+        border-top: solid 1px rgba($white, 0.2);
+        padding-top: 50px;
+      }
+      .stat {
+        border-right: none;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+section.leadership {
+  h2.big, p.callout {
+    color: $mtiblue;
+  }
+  img {
+    max-width: 100%;
+  }
+  .leader {
+    text-align: center;
+  }
+  .bio {
+    margin-top: 30px;
+    h2 {
+      color: $tagblue;
+    }
+    p {
+      font-family: $SourceSans;
+      color: $neutral900;
+      font-weight: 400;
+    }
+  }
+}
+section.giving {
+  h2 {
+    text-align: center;
+  }
+  p {
+    text-align: center;
+    font-family: $SourceSans;
+  }
+  .donated {
+    margin-top: 50px;
+    @include mobile {
+      text-align: center;
+      .charity {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+// End About Us
+
+// subscribe
+section.subscribe {
+  // background-color: $mtiblue;
+  @include gradient($tagblue);
+  h2, p {
+    color: $white;
+    i {
+      font-size: 100px;
+      margin-top: 50px;
+    }
+  }
+}
+
+// Industries
+section.industries {
+  .industry {
+    margin-bottom: 50px;
+    a {
+      text-decoration: none;
+      display: block;
+      margin: 0 auto;
+      border-radius: 100px;
+      width: 195px;
+      height: 195px;
+      i {
+        @include font-size(72px);
+        margin-top: 30px;
+      }
+      h2 {
+        text-transform: uppercase;
+        color: $mtiblue;
+        margin-top: 10px;
+      }
+      &:hover {
+        i, h2 {
+          color: $white;
+        }
+      }
+    }
+    &.custom-software {
+      a {
+        i {
+          color: $mtiteal;
+        }
+        &:hover {
+          background-color: $mtiteal;
+          i {
+            color: $white;
+          }
+        }
+      }
+    }
+    &.managed-services {
+      a {
+        i {
+          color: $mtipurple;
+        }
+        &:hover {
+          background-color: $mtipurple;
+          i {
+            color: $white;
+          }
+        }
+      }
+    }
+    &.hosting-solutions {
+      a {
+        i {
+          color: $mtiblue;
+        }
+        &:hover {
+          background-color: $mtiblue;
+          i {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Contact Us
+section.contact {
+  .block {
+    padding: 10px 0;
+    margin-bottom: 10px;
+    color: $white;
+    overflow: hidden;
+    p {
+      margin: 10px;
+    }
+    &.light-blue {
+      background-color: $tagblue;
+      h2, p {
+        color: $white;
+      }
+    }
+    &.light-gray {
+      background-color: $neutral0;
+      h2, p {
+        color: $neutral700;
+      }
+    }
+    &.dark-gray {
+      background-color: $neutral900;
+      h2, p {
+        color: $white;
+      }
+    }
+    i {
+      @include grid-column(1);
+      @include font-size(64px);
+      text-align: center;
+      @include mobile {
+        display: none;
+      }
+    }
+    h2 {
+      @include grid-column(6);
+      @include font-size(40px);
+      @include mobile {
+        @include grid-column(12);
+        @include font-size(24px);
+        text-align: center;
+      }
+    }
+    p {
+      @include grid-column(5);
+      font-family: $SourceSans;
+      @include font-size(24px);
+      a {
+        @include btntxt($mtiblue);
+      }
+      @include mobile {
+        @include grid-column(12);
+        @include font-size(16px);
+        text-align: center;
+      }
+    }
+    form, .map {
+      @include grid-column(10);
+      @include grid-push(1);
+      @include grid-shift(-1);
+      @include mobile {
+        @include grid-column(12);
+        @include grid-push(0);
+        @include grid-shift(0);
+      }
+    }
+    .map {
+      margin-top: 50px;
+    }
+  }
+  .video {
+    margin: 0;
+    margin-top: 20px;
+    width: 100%;
+    p {
+      color: $white;
+      font-family: $SourceSans;
+      text-align: center;
+      @include font-size(16px);
+      margin: 0;
+      width: 100%;
+      display: block;
+    }
+  }
+}
+// End Contact Us
+
+// Contact Links
+section.links {
+  .documents {
+    @include grid-column(8);
+    @include mobile {
+      @include grid-column(12);
+    }
+  }
+  .helpful-links {
+    @include grid-column(4);
+    @include mobile {
+      @include grid-column(12);
+      margin-top: 50px;
+    }
+  }
+  h2 {
+    text-transform: uppercase;
+  }
+  ul {
+    padding: 0px;
+    li {
+      list-style-type: none;
+      margin-bottom: 20px;
+      a {
+        color: $tagblue;
+        font-weight: 500;
+        text-decoration: none;
+        &:hover {
+          color: $mtiblue;
+        }
+      }
+      &.pdf {
+        &:before {
+          content: url('../images/pdf.svg');
+          position: relative;
+          top: 7px;
+          margin-right: 20px;
+        }
+      }
+      &.doc {
+        &:before {
+          content: url('../images/doc.svg');
+          position: relative;
+          top: 7px;
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}
+// End Contact links
+
+// Our Promise
+section.promiseicons {
+  P {
+    color: $white;
+  }
+  .icon {
+    height: 60px;
+    img {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+// End Our promise
+
+// ColoCalculator
+section.colo {
+  .callout {
+    color: $tagblue;
+  }
+  .calc {
+    @include grid-column(8);
+    @include mobile {
+      @include grid-column(12);
+    }
+  }
+  .summary {
+    @include grid-column(4);
+    background-color: $neutral0;
+    @include mobile {
+      @include grid-column(12);
+      margin-top: 30px;
+    }
+    .content {
+      padding: 20px;
+      h2 {
+        text-transform: uppercase;
+        color: $neutral700;
+        font-weight: 300;
+      }
+    }
+  }
+}
+// End ColoCalculator
+
+// Success Header
+section.success-header {
+  h2, p {
+    @include grid-column(10);
+    @include grid-shift(1);
+  }
+}
+// End Success Header
+
+// Stories
+section.stories {
+  .container {
+    margin-bottom: 50px;
+    &:last-child {
+      margin-bottom: 0px;
+    }
+    h2 {
+      img {
+        width: 70px;
+        position: relative;
+        top: 12px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+// End Stories
+
+// Case Study
+section.study {
+  .content {
+    background-color: $white;
+    padding: 20px;
+  }
+  .story {
+    @include grid-column(8);
+    @include mobile {
+      @include grid-column(12);
+    }
+    p {
+      font-family: $SourceSans;
+      strong {
+        color: $black;
+      }
+      &.date {
+        margin: 30px 0;
+      }
+    }
+    .author {
+      margin-top: 50px;
+      margin-bottom: 30px;
+      img {
+        border-radius: 100px;
+        float: left;
+        margin-right: 20px;
+      }
+      p {
+        font-weight: 500;
+        color: $neutral900;
+        position: relative;
+        top: 13px;
+        a {
+          color: $tagblue;
+          text-decoration: none;
+          @include font-size(14px);
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+        .title {
+          color: $neutral700;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}
+// End Case Study
+
+// News List
+section.news-list {
+  .content {
+    overflow: hidden;
+    background-color: $white;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .col2 {
+    margin: 0px;
+    margin-bottom: 20px;
+    @include grid-collapse;
+  }
+  .article {
+    @include grid-column(8);
+    font-family: $SourceSans;
+    @include mobile {
+      @include grid-column(12);
+    }
+    p {
+      &.title a {
+        @include font-size(28px);
+        line-height: 28px;
+        color: $mtiblue !important;
+        text-decoration: none;
+        font-weight: 500;
+        &:hover {
+          color: $mtiltblue;
+        }
+      }
+      &.date {
+        @include font-size(14px);
+      }
+
+    }
+  }
+}
+// End News List
+
+// Testimonials
+section.testimonials {
+  &.custom-software {
+    @include linear-gradient(180deg, darken($mtiteal, 20%), $mtiteal);
+  }
+  &.managed-services {
+    @include linear-gradient(180deg, darken($mtipurple, 20%), $mtipurple);
+  }
+  &.hosting-solutions {
+    @include linear-gradient(180deg, darken($mtiblue, 20%), $mtiblue);
+  }
+  h2 {
+    color: $white;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    font-weight: 100;
+    span {
+      display: block;
+      font-weight: 400;
+      margin-top: -30px;
+    }
+    margin-bottom: 50px;
+  }
+  .testimony {
+    clear: both;
+    overflow: hidden;
+    padding: 50px 0px;
+    border-top: solid 1px rgba($white, 0.25);
+    img {
+      float: left;
+      margin-right: 50px;
+      @include mobile {
+        float: none;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+    p {
+      color: $white;
+      @include font-size(24px);
+      line-height: 36px;
+      font-weight: 100;
+      &.name {
+        @include font-size(14px);
+        line-height: 24px;
+        font-family: $SourceSans;
+        font-weight: 500;
+        .company {
+          color: $tagblue;
+          margin-right: 20px;
+        }
+      }
+    }
+    @include mobile {
+      .categories {
+        display: block;
+      }
+    }
+  }
+}
+// End Testimonials
+
+// Testimonials Landing
+section.testimonials-landing {
+  .blocks {
+    .block {
+      .block-content {
+        img {
+          width: 50%;
+        }
+        a {
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+}
+// End Testimonials Landing
+
+// Fans
+section.fans {
+  background-color: $white;
+  .spot {
+    @include grid-column(5);
+    text-align: center;
+    &:nth-child(2) {
+      @include grid-shift(2);
+    }
+    img {
+      width: 30%;
+    }
+    h2 {
+      text-transform: uppercase;
+    }
+    p {
+      font-family: $SourceSans;
+    }
+    a {
+      display: inline-block !important;
+      padding: 10px 30px !important;
+      margin-top: 10px;
+    }
+    @include mobile {
+      @include grid-column(12);
+      &:nth-child(2) {
+        @include grid-shift(0);
+        margin-top: 50px;
+      }
+      img {
+        width: 20%;
+      }
+    }
+  }
+}
+// End Fans
+
+// Pitch
+section.pitch {
+  &.custom-software {
+    @include linear-gradient(180deg, darken($mtiteal, 20%), $mtiteal);
+  }
+  &.managed-services {
+    @include linear-gradient(180deg, darken($mtipurple, 20%), $mtipurple);
+  }
+  &.hosting-solutions {
+    @include linear-gradient(180deg, darken($mtiblue, 20%), $mtiblue);
+  }
+  h2 {
+    margin: 0 auto;
+    text-align: center;
+    color: $white;
+    &.pitch {
+      width: 80%;
+    }
+  }
+  .dropdown {
+    background-color: rgba($black, 0.5);
+    border-radius: 16px;
+    padding: 40px 60px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    select {
+      width: 100%;
+      padding: 10px;
+      height: 50px;
+      border: none;
+      margin-top: 20px;
+      outline: none;
+    }
+  }
+  .spotlights {
+    .spot {
+      color: $white;
+      h2 {
+        text-align: left;
+        text-transform: uppercase;
+      }
+      p {
+        font-family: $SourceSans;
+        color: $white;
+      }
+    }
+  }
+  .c2a {
+    @include grid-column(12);
+    margin-top: 30px;
+    float: none;
+    clear: both;
+    overflow: hidden;
+    a {
+      margin: 0 auto;
+    }
+  }
+}
+// End Pitch
+
+// Questions
+section.questions {
+  // background-color: $neutral0;
+  .question {
+    @include grid-column(10);
+    @include grid-push(1);
+    margin-bottom: 20px;
+    background-color: $white;
+    border-left-style: solid;
+    border-left-width: 4px;
+    &:last-child {
+      margin-bottom: 0px;
+    }
+    .question-content {
+      margin: 0px;
+      padding: 20px 50px;
+      h2 {
+        text-transform: uppercase;
+      }
+      p {
+        margin: 0px 0px 20px 0px;
+        font-family: $SourceSans;
+      }
+      a {
+        display: inline-block !important;
+        padding: 10px 50px !important;
+        @include mobile {
+          padding: 10px !important;
+          display: block !important;
+        }
+      }
+    }
+  }
+  .btn {
+    text-align: center;
+    .button {
+      width: 50%;
+      margin: 50px auto 0px auto;
+    }
+  }
+}
+// End Questions
+
+// Big Quote Statements
+section.big-quote {
+  .statement {
+    @include grid-column(10);
+    @include grid-shift(1);
+    &.custom-software {
+      p {
+        color: $mtiteal;
+      }
+    }
+    &.managed-services {
+      p {
+        color: $mtipurple;
+      }
+    }
+    &.hosting-solutions {
+      p {
+        color: $mtiblue;
+      }
+    }
+    p {
+      @include font-size(48px);
+      line-height: 71px;
+      &.quoter {
+        font-family: $SourceSans;
+        @include font-size(20px);
+        line-height: 25px;
+        color: $black;
+        .company {
+          font-weight: 600;
+        }
+      }
+      @include mobile {
+        @include font-size(24px);
+        line-height: 36px;
+        &.quoter {
+          @include font-size(14px);
+          line-height: 18px;
+        }
+      }
+    }
+  }
+}
+// End Big Quote Statements
